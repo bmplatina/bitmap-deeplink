@@ -1,24 +1,21 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from "vue-router";
 import HelloWorld from "./components/HelloWorld.vue";
+
 </script>
 
 <template>
   <header>
-    <img
-      alt="Vue logo"
-      class="logo"
-      src="@/assets/logo.svg"
-      width="125"
-      height="125"
-    />
-
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
+      <h1>Bitmap</h1>
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <ul class="menu">
+          <li><RouterLink to="/">Home</RouterLink></li>
+          <li><a href="//wiki.prodbybitmap.com">위키</a></li>
+          <li><RouterLink to="/esd/games">게임</RouterLink></li>
+          <li><a href="//esd.prodbybitmap.com">지원</a></li>
+          <li><RouterLink to="/about">About</RouterLink></li>
+        </ul>
       </nav>
     </div>
   </header>
@@ -27,65 +24,47 @@ import HelloWorld from "./components/HelloWorld.vue";
 </template>
 
 <style scoped>
+@import url('https://fonts.cdnfonts.com/css/helvetica-neue-9');
+@import url('https://cdn.jsdelivr.net/npm/font-applesdgothicneo@1.0/all.min.css');
+
+* {
+  font-family: 'Helvetica Neue', 'Helvetica', 'AppleSDGothicNeo', 'Noto Sans KR', sans-serif;
+}
+
 header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
+  height: 75px;
+  backdrop-filter: blur(5px);
+  background: linear-gradient(0deg, rgba(32, 32, 32, 0.75), rgba(32, 32, 32, 0.75));
+  line-height: 75px;
+  position: fixed;
   width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
+  z-index: 999;
+  top: 0;
+  left: 0;
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
+h1 {
+  color: white;
+  line-height: 75px;
+  float: left;
 }
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
+.menu {
+  float: right;
 }
 
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+.menu li {
+  float: left;
 }
 
-nav a:first-of-type {
-  border: 0;
+.menu a {
+  line-height: 75px;
+  color: white;
+  padding: 0 15px;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+.wrapper {
+  width: 1170px;
+  margin: 0 auto;
 }
 </style>
