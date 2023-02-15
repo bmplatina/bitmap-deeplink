@@ -7,7 +7,7 @@ import HelloWorld from "./components/HelloWorld.vue";
 <template>
   <header>
     <div class="wrapper">
-      <h1>Bitmap</h1>
+      <h1><a href="//prodbybitmap.com">Bitmap</a></h1>
       <nav>
         <ul class="menu">
           <li><RouterLink to="/">Home</RouterLink></li>
